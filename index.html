@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apoyo Boricua — Puerto Rican Charities</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --cream: #F7F3EC;
+    --ink: #1A1410;
+    --ink-soft: #4A3F35;
+    --ink-muted: #8A7F75;
+    --gold: #C8912A;
+    --gold-light: #F0D898;
+    --red: #B8312F;
+    --red-light: #F2D5D4;
+    --green: #2D6A4F;
+    --green-light: #D8EDE4;
+    --blue: #1A4A7A;
+    --blue-light: #D4E4F4;
+    --earth: #7A4F2A;
+    --earth-light: #EDE0CF;
+    --teal: #1A6A6A;
+    --teal-light: #D0EDED;
+    --border: rgba(26,20,16,0.12);
+    --pp-blue: #003087;
+    --pp-blue-light: #D6E4F7;
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    position: relative;
+    padding: 0 clamp(1.5rem, 5vw, 5rem);
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 80% 20%, rgba(200,145,42,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 10% 80%, rgba(184,49,47,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+
+  .hero-flag { display: flex; gap: 6px; padding: 2rem 0 1rem; position: relative; z-index: 1; }
+  .flag-stripe { height: 6px; border-radius: 3px; }
+  .flag-stripe.red   { background: var(--red); flex: 2; }
+  .flag-stripe.white { background: var(--ink); opacity: 0.15; flex: 2; }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 0;
+    max-width: 760px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    font-weight: 700; line-height: 1.05; color: var(--ink); margin-bottom: 2rem;
+  }
+  .hero-title em { font-style: italic; color: var(--red); }
+
+  .hero-desc {
+    font-size: 1.1rem; font-weight: 300; color: var(--ink-soft);
+    max-width: 540px; margin-bottom: 3rem; line-height: 1.8;
+  }
+
+  .hero-stats { display: flex; gap: 3rem; flex-wrap: wrap; }
+  .stat { display: flex; flex-direction: column; gap: 2px; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 700; color: var(--ink); }
+  .stat-label { font-size: 12px; font-weight: 400; color: var(--ink-muted); letter-spacing: 0.05em; text-transform: uppercase; }
+
+  .hero-scroll {
+    display: flex; align-items: center; gap: 1rem; padding: 2.5rem 0;
+    color: var(--ink-muted); font-size: 13px; letter-spacing: 0.05em; position: relative; z-index: 1;
+  }
+  .scroll-line { width: 48px; height: 1px; background: var(--ink-muted); }
+
+  /* ── FILTER BAR ── */
+  .filter-section {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--cream); border-bottom: 1px solid var(--border);
+    padding: 1rem clamp(1.5rem, 5vw, 5rem);
+  }
+  .filter-inner {
+    display: flex; align-items: center; gap: 0.75rem;
+    flex-wrap: wrap; max-width: 1200px; margin: 0 auto;
+  }
+  .filter-label {
+    font-size: 12px; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--ink-muted); margin-right: 0.5rem;
+  }
+  .filter-btn {
+    padding: 6px 16px; border: 1px solid var(--border); border-radius: 100px;
+    background: transparent; font-family: 'DM Sans', sans-serif;
+    font-size: 13px; font-weight: 400; color: var(--ink-soft); cursor: pointer;
+    transition: all 0.2s; white-space: nowrap;
+  }
+  .filter-btn:hover { border-color: var(--ink); color: var(--ink); }
+  .filter-btn.active { background: var(--ink); border-color: var(--ink); color: var(--cream); }
+
+  /* ── GRID ── */
+  .charities-section { padding: 4rem clamp(1.5rem, 5vw, 5rem); max-width: 1200px; margin: 0 auto; }
+  .section-header { display: flex; align-items: baseline; gap: 1rem; margin-bottom: 3rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 400; }
+  .section-count { font-size: 13px; color: var(--ink-muted); }
+
+  .charity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  /* ── CARD ── */
+  .charity-card {
+    background: var(--cream); padding: 1.75rem;
+    transition: background 0.2s; display: flex; flex-direction: column; gap: 0.85rem;
+  }
+  .charity-card:hover { background: #fff; }
+  .charity-card.hidden { display: none; }
+
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+
+  .card-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; flex-shrink: 0;
+  }
+  .card-icon.disaster    { background: #FDE8D0; }
+  .card-icon.food        { background: var(--earth-light); }
+  .card-icon.land        { background: var(--teal-light); }
+  .card-icon.environment { background: var(--green-light); }
+  .card-icon.community   { background: var(--gold-light); }
+
+  .card-tag {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 4px 10px; border-radius: 100px; flex-shrink: 0;
+  }
+  .tag-disaster    { background: #FDE8D0; color: #8B4513; }
+  .tag-food        { background: var(--earth-light); color: var(--earth); }
+  .tag-land        { background: var(--teal-light); color: var(--teal); }
+  .tag-environment { background: var(--green-light); color: var(--green); }
+  .tag-community   { background: var(--gold-light); color: #7A5010; }
+
+  .card-name {
+    font-family: 'Playfair Display', serif; font-size: 1.1rem;
+    font-weight: 700; color: var(--ink); line-height: 1.3;
+  }
+
+  .card-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.7; font-weight: 300; flex: 1; }
+
+  /* ── LINKS AREA ── */
+  .card-links {
+    display: flex; flex-direction: column; gap: 0.5rem;
+    margin-top: 0.25rem; padding-top: 0.85rem; border-top: 1px solid var(--border);
+  }
+  .card-links-row {
+    display: flex; align-items: center; justify-content: space-between; gap: 0.5rem;
+  }
+  .card-location { font-size: 12px; color: var(--ink-muted); }
+
+  .card-link {
+    font-size: 13px; font-weight: 500; color: var(--ink);
+    text-decoration: none; display: inline-flex; align-items: center;
+    gap: 4px; transition: color 0.2s; white-space: nowrap;
+  }
+  .card-link::after { content: '→'; transition: transform 0.2s; }
+  .card-link:hover { color: var(--red); }
+  .card-link:hover::after { transform: translateX(3px); }
+
+  /* ── PAYPAL BLOCK ── */
+  .paypal-block {
+    display: flex; align-items: center; gap: 0.6rem;
+    background: var(--pp-blue-light); border-radius: 8px;
+    padding: 0.55rem 0.75rem; flex-wrap: wrap; margin-top: 0.15rem;
+  }
+  .paypal-btn {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: var(--pp-blue); color: #fff;
+    font-family: 'DM Sans', sans-serif; font-size: 12px; font-weight: 500;
+    text-decoration: none; padding: 5px 12px; border-radius: 6px;
+    white-space: nowrap; transition: opacity 0.2s; flex-shrink: 0;
+  }
+  .paypal-btn:hover { opacity: 0.85; }
+  .paypal-btn svg { width: 13px; height: 13px; fill: #fff; flex-shrink: 0; }
+  .paypal-url {
+    font-size: 11px; color: var(--pp-blue); word-break: break-all;
+    line-height: 1.4; flex: 1; min-width: 0;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem clamp(1.5rem, 5vw, 5rem);
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 1.25rem; font-style: italic; }
+  .footer-note { font-size: 13px; color: var(--ink-muted); max-width: 420px; text-align: right; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-eyebrow { animation: fadeUp 0.6s ease both; }
+  .hero-title   { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-desc    { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-stats   { animation: fadeUp 0.6s 0.3s ease both; }
+
+  @media (max-width: 600px) {
+    .charity-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 2rem; }
+    .footer-note { text-align: left; }
+    .paypal-block { flex-direction: column; align-items: flex-start; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-flag">
+    <div class="flag-stripe red"></div>
+    <div class="flag-stripe white"></div>
+    <div class="flag-stripe red"></div>
+    <div class="flag-stripe white"></div>
+    <div class="flag-stripe red"></div>
+  </div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Puerto Rico · Giving Directory</p>
+    <h1 class="hero-title">Give to <em>la isla.</em><br>Build the future.</h1>
+    <p class="hero-desc">
+      A curated directory of Puerto Rican grassroots organizations working in food sovereignty,
+      land access, disaster resilience, and environmental protection. PayPal links included —
+      so you can donate even when a site goes down during a crisis.
+    </p>
+    <div class="hero-stats">
+      <div class="stat"><span class="stat-num">12</span><span class="stat-label">Organizations</span></div>
+      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Focus Areas</span></div>
+      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Puerto Rico–based</span></div>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll to explore</span></div>
+</section>
+
+<!-- FILTER BAR -->
+<div class="filter-section">
+  <div class="filter-inner">
+    <span class="filter-label">Filter</span>
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="disaster">Disaster Relief</button>
+    <button class="filter-btn" data-filter="food">Food Sovereignty</button>
+    <button class="filter-btn" data-filter="land">Land Access</button>
+    <button class="filter-btn" data-filter="environment">Environment</button>
+    <button class="filter-btn" data-filter="community">Community</button>
+  </div>
+</div>
+
+<!-- GRID -->
+<section class="charities-section">
+  <div class="section-header">
+    <h2 class="section-title">Organizations</h2>
+    <span class="section-count" id="count">Showing 12</span>
+  </div>
+  <div class="charity-grid" id="grid">
+
+    <!-- PayPal SVG path reused inline in every paypal-btn -->
+
+    <!-- 1. Casa Pueblo -->
+    <div class="charity-card" data-category="disaster">
+      <div class="card-top">
+        <div class="card-icon disaster">🏠</div>
+        <span class="card-tag tag-disaster">Disaster Relief</span>
+      </div>
+      <div class="card-name">Casa Pueblo</div>
+      <p class="card-desc">A community-based organization in Adjuntas that became a national model for solar-powered disaster resilience after Hurricane María — keeping lights, medicine, and communications alive when the grid failed.</p>
+      <div class="card-links">
+        <div class="card-links-row">
+          <span class="card-location">📍 Adjuntas, PR</span>
+          <a href="https://casapueblo.org/" target="_blank" class="card-link">Visit site</a>
+        </div>
+        <div class="paypal-block">
+          <a class="paypal-btn" href="https://www.paypal.com/donate?token=iqeeGDsPXFpJoIE28hueBX3pAgnKXIOv8UeSBjr26DIlQaqDUvZAfZXr8mjw7xFEGoZf_3hOtA9-dQPQ" target="_blank">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
+            Donate via PayPal
+          </a>
+          <span class="paypal-url">paypal.com/donate?token=BG6_k8Ouh…</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. Barrio Eléctrico -->
+    <div class="charity-card" data-category="disaster">
+      <div class="card-top">
+        <div class="card-icon disaster">⚡</div>
+        <span class="card-tag tag-disaster">Disaster Relief</span>
+      </div>
+      <div class="card-name">Barrio Eléctrico</div>
+      <p class="card-desc">Working across multiple municipios to bring community-controlled, renewable electricity access to Puerto Rican neighborhoods — reducing dependence on an aging and disaster-vulnerable grid.</p>
+      <div class="card-links">
+        <div class="card-links-row">
+          <span class="card-location">📍 Aguadilla &amp; other municipios</span>
+          <a href="https://www.barrioelectrico.org/" target="_blank" class="card-link">Visit site</a>
+        </div>
+        <div class="paypal-block">
+          <a class="paypal-btn" href="https://www.paypal.com/donate/?hosted_button_id=GGL82TBF3LGF2" target="_blank">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
+            Donate via PayPal
+          </a>
+          <span class="paypal-url">paypal.com/donate/?hosted_button_id=GGL82TBF3LGF2</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. La C.A.T -->
+    <div class="charity-card" data-category="land">
+      <div class="card-top">
+        <div class="card-icon land">🌱</div>
+        <span class="card-tag tag-land">Land Access</span>
+      </div>
+      <div class="card-name">La C.A.T — Cooperativa de Acceso a Tierras</div>
+      <p class="card-desc">A land cooperative working to reclaim and collectively steward agricultural land in Puerto Rico, building food sovereignty from the ground up through community land ownership models.</p>
+      <div class="card-links">
+        <div class="card-links-row">
+          <span class="card-location">📍 Guaynabo, PR</span>
+          <a href="https://lacat.org/" target="_blank" class="card-link">Visit site</a>
+        </div>
+        <div class="card-links-row" style="justify-content: flex-end;">
+          <a href="https://lacat.org/donaciones/" target="_blank" class="card-link">Donate</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. FiTiTiCas -->
+    <div class="charity-card" data-category="food">
+      <div class="card-top">
+        <div class="card-icon food">🌾</div>
+        <span class="card-tag tag-food">Food Sovereignty</span>
+      </div>
+      <div class="card-name">FiTiTiCas — Fideicomiso Agrícola</div>
+      <p class="card-desc">An agricultural land trust protecting Puerto Rican farmland from development and keeping it in the hands of local farmers — supporting long-term food security and resilient local food systems.</p>
+      <div class="card-links">
+        <div class="card-links-row">
+          <span class="card-location">📍 Puerto Rico</span>
+          <a href="https://www.fideicomisoagricola.org/donar" target="_blank" class="card-link">Donate</a>
+        </div>
+        <div class="paypal-block">
+          <a class="paypal-btn" href="https://www.paypal.com/us/fundraiser/charity/3884088" target="_blank">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
+            Donate via PayPal
+          </a>
+          <span class="paypal-url">paypal.com/us/fundraiser/charity/3884088</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. Huerto Urbano del Callejón Trujillo -->
+    <div class="charity-card" data-category="food">
+      <div class="card-top">
+        <div class="card-icon food">🌿</div>
+        <span class="card-tag tag-food">Food Sovereignty</span>
+      </div>
+      <div class="card-name">Huerto Urbano del Callejón Trujillo</div>
+      <p class="card-desc">A community urban garden in Ponce growing food, fostering community bonds, and nurturing ecological awareness in the heart of the city. Follow their work on Instagram.</p>
+      <div class="card-links">
+        <div class="card-links-row">
+          <span class="card-location">📍 Ponce, PR</span>
+          <a href="https://www.instagram.com/huerto_callejon_trujillo/" target="_blank" class="card-link">Instagram</a>
+        </div>
+        <div class="paypal-block">
+          <a class="paypal-btn" href="https://www.paypal.com/donate?campaign_id=GMSFQMBDJEY8E" target="_blank">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
+            Donate via PayPal
+          </a>
+          <span class="paypal-url">paypal.com/donate?campaign_id=GMSFQMBDJEY8E</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. UrbePie -->
+    <div class="charity-card" data-category="land">
+      <div class="card-top">
+        <div class="card-icon land">🏘️</div>
+        <span class="card-tag tag-land">Land Access</span>
+      </div>
+      <div class="card-name">UrbePie</div>
+      <p class="card-desc">Reclaims vacant and abandoned urban land in Caguas for community use — transforming neglected lots into productive spaces that strengthen neighborhood resilience and self-sufficiency.</p>
+      <div class="card-links">
+        <div class="card-links-row">
+          <span class="card-location">📍 Caguas, PR</span>
+          <a href="https://www.urbeapie.com/" target="_blank" class="card-link">Visit site</a>
+        </div>
+        <div class="paypal-block">
+          <a class="paypal-btn" href="https://www.paypal.com/paypalme/Urbeapie" target="_blank">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
+            Donate via PayPal
+          </a>
+          <span class="paypal-url">paypal.com/paypalme/Urbeapie</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. El Josco Bravo -->
+    <div class="charity-card" data-category="food">
+      <div class="card-top">
+        <div class="card-icon food">🐄</div>
+        <span class="card-tag tag-food">Food Sovereignty</span>
+      </div>
+      <div class="card-name">El Josco Bravo</div>
+      <p class="card-desc">An agroecological farm in Toa Alta producing local food and offering community-supported agriculture subscriptions — a living model for sustainable, community-rooted farming in Puerto Rico.</p>
+      <div class="card-links">
+        <div class="card-links-row">
+          <span class="card-location">📍 Toa Alta, PR</span>
+          <a href="https://www.eljoscobravo.org/" target="_blank" class="card-link">Visit site</a>
+        </div>
+        <div class="card-links-row" style="justify-content: flex-end;">
+          <a href="https://www.eljoscobravo.org/checkout/donate?donatePageId=64d16fc519367e5bcd535cbc" target="_blank" class="card-link">Contribute</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. Plenitud PR -->
+    <div class="charity-card" data-category="food">
+      <div class="card-top">
+        <div class="card-icon food">☀️</div>
+        <span class="card-tag tag-food">Food Sovereignty</span>
+      </div>
+      <div class="card-name">Plenitud PR</div>
+      <p class="card-desc">An eco-educational initiative in Las Marías integrating sustainable agriculture, renewable energy, and holistic community living — a model for what a resilient Puerto Rican future can look like.</p>
+      <div class="card-links">
+        <div class="card-links-row">
+          <span class="card-location">📍 Las Marías, PR</span>
+          <a href="https://es.plenitudpr.org/" target="_blank" class="card-link">Visit site</a>
+        </div>
+        <div class="card-links-row" style="justify-content: flex-end;">
+          <a href="https://plenitudiniciativasecoeducativasinc-bloom.kindful.com/?campaign=1340887" target="_blank" class="card-link">Contribute</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. Para la Naturaleza -->
+    <div class="charity-card" data-category="environment">
+      <div class="card-top">
+        <div class="card-icon environment">🌳</div>
+        <span class="card-tag tag-environment">Environment</span>
+      </div>
+      <div class="card-name">Para la Naturaleza</div>
+      <p class="card-desc">Conserves natural lands, restores ecosystems, and reconnects communities with Puerto Rico's natural heritage through science, education, and long-term land stewardship programs.</p>
+      <div class="card-links">
+        <div class="card-links-row">
+          <span class="card-location">📍 San Juan, PR</span>
+          <a href="https://paralanaturaleza.org" target="_blank" class="card-link">Visit site</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. Taller Salud -->
+    <div class="charity-card" data-category="community">
+      <div class="card-top">
+        <div class="card-icon community">🤝</div>
+        <span class="card-tag tag-community">Community</span>
+      </div>
+      <div class="card-name">Taller Salud</div>
+      <p class="card-desc">A feminist community health organization in Loíza working at the intersection of public health, gender equity, and racial justice — centering the most marginalized voices on the island.</p>
+      <div class="card-links">
+        <div class="card-links-row">
+          <span class="card-location">📍 Loíza, PR</span>
+          <a href="https://tallersalud.com" target="_blank" class="card-link">Visit site</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. Ayuda Legal Puerto Rico -->
+    <div class="charity-card" data-category="disaster">
+      <div class="card-top">
+        <div class="card-icon disaster">⚖️</div>
+        <span class="card-tag tag-disaster">Disaster Relief</span>
+      </div>
+      <div class="card-name">Ayuda Legal Puerto Rico</div>
+      <p class="card-desc">Provides free legal services to low-income communities after disasters — helping residents navigate federal aid, insurance claims, and housing rights when they need it most.</p>
+      <div class="card-links">
+        <div class="card-links-row">
+          <span class="card-location">📍 San Juan, PR</span>
+          <a href="https://ayudalegalpr.org" target="_blank" class="card-link">Visit site</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12. Sociedad Ambiente Marino -->
+    <div class="charity-card" data-category="environment">
+      <div class="card-top">
+        <div class="card-icon environment">🐠</div>
+        <span class="card-tag tag-environment">Environment</span>
+      </div>
+      <div class="card-name">Sociedad Ambiente Marino</div>
+      <p class="card-desc">Protects Puerto Rico's coastal and marine ecosystems through scientific research, reef restoration, and community engagement — guarding the waters that surround and sustain the island.</p>
+      <div class="card-links">
+        <div class="card-links-row">
+          <span class="card-location">📍 San Juan, PR</span>
+          <a href="https://sampr.org" target="_blank" class="card-link">Visit site</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Apoyo Boricua</div>
+  <p class="footer-note">A community resource, not affiliated with any listed organization. Always verify nonprofits before donating. PayPal links are provided directly by each organization.</p>
+</footer>
+
+<script>
+  const btns   = document.querySelectorAll('.filter-btn');
+  const cards  = document.querySelectorAll('.charity-card');
+  const countEl = document.getElementById('count');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      btns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      let visible = 0;
+      cards.forEach(card => {
+        const show = f === 'all' || card.dataset.category === f;
+        card.classList.toggle('hidden', !show);
+        if (show) visible++;
+      });
+      countEl.textContent = `Showing ${visible}`;
+    });
+  });
+</script>
+</body>
+</html>
