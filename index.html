@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+T<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Apoyo Boricua — Puerto Rican Charities</title>
+<title>ApoyoPR — Puerto Rican Charities</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
@@ -220,6 +220,7 @@
     line-height: 1.4; flex: 1; min-width: 0;
   }
 
+   
   /* ── FOOTER ── */
   footer {
     border-top: 1px solid var(--border);
@@ -250,318 +251,362 @@
 </head>
 <body>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-flag">
-    <div class="flag-stripe red"></div>
-    <div class="flag-stripe white"></div>
-    <div class="flag-stripe red"></div>
-    <div class="flag-stripe white"></div>
-    <div class="flag-stripe red"></div>
-  </div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">Puerto Rico · Giving Directory</p>
-    <h1 class="hero-title">Give to <em>la isla.</em><br>Build the future.</h1>
-    <p class="hero-desc">
-      A curated directory of Puerto Rican grassroots organizations working in food sovereignty,
-      land access, disaster resilience, and environmental protection.
-    </p>
-    <div class="hero-stats">
-      <div class="stat"><span class="stat-num">12</span><span class="stat-label">Organizations</span></div>
-      <div class="stat"><span class="stat-num">5</span><span class="stat-label">Focus Areas</span></div>
-      <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Puerto Rico–based</span></div>
-    </div>
-  </div>
-  <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll to explore</span></div>
-</section>
-
-<!-- FILTER BAR -->
-<div class="filter-section">
-  <div class="filter-inner">
-    <span class="filter-label">Filter</span>
-    <button class="filter-btn active" data-filter="all">All</button>
-    <button class="filter-btn" data-filter="disaster">Disaster Relief</button>
-    <button class="filter-btn" data-filter="food">Food Sovereignty</button>
-    <button class="filter-btn" data-filter="land">Land Access</button>
-    <button class="filter-btn" data-filter="environment">Environment</button>
-    <button class="filter-btn" data-filter="community">Community</button>
-  </div>
-</div>
-
-<!-- GRID -->
-<section class="charities-section">
-  <div class="section-header">
-    <h2 class="section-title">Organizations</h2>
-    <span class="section-count" id="count">Showing 12</span>
-  </div>
-  <div class="charity-grid" id="grid">
-
-    <!-- PayPal SVG path reused inline in every paypal-btn -->
-
-    <!-- 1. Casa Pueblo -->
-    <div class="charity-card" data-category="disaster">
-      <div class="card-top">
-        <div class="card-icon disaster">🏠</div>
-        <span class="card-tag tag-disaster">Disaster Relief</span>
-      </div>
-      <div class="card-name">Casa Pueblo</div>
-      <p class="card-desc">A community-based organization in Adjuntas that became a national model for solar-powered disaster resilience after Hurricane María — keeping lights, medicine, and communications alive when the grid failed.</p>
-      <div class="card-links">
-        <div class="card-links-row">
-          <span class="card-location">📍 Adjuntas, PR</span>
-          <a href="https://casapueblo.org/" target="_blank" class="card-link">Visit site</a>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-flag">
+            <div class="flag-stripe red"></div>
+            <div class="flag-stripe white"></div>
+            <div class="flag-stripe red"></div>
+            <div class="flag-stripe white"></div>
+            <div class="flag-stripe red"></div>
         </div>
-        <div class="paypal-block">
-          <a class="paypal-btn" href="https://www.paypal.com/donate?token=iqeeGDsPXFpJoIE28hueBX3pAgnKXIOv8UeSBjr26DIlQaqDUvZAfZXr8mjw7xFEGoZf_3hOtA9-dQPQ" target="_blank">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
-            Donate via PayPal
-          </a>
-          <span class="paypal-url">paypal.com/donate?token=BG6_k8Ouh…</span>
+        <div class="hero-content">
+            <p class="hero-eyebrow">Puerto Rico · Giving Directory</p>
+            <h1 class="hero-title">Give to <em>la isla.</em><br>Build the future.</h1>
+            <p class="hero-desc">
+                A curated directory of Puerto Rican grassroots organizations working in food sovereignty,
+                land access, disaster resilience, and environmental protection.
+            </p>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-num">12</span><span class="stat-label">Organizations</span></div>
+                <div class="stat"><span class="stat-num">5</span><span class="stat-label">Focus Areas</span></div>
+                <div class="stat"><span class="stat-num">100%</span><span class="stat-label">Puerto Rico–based</span></div>
+            </div>
         </div>
-      </div>
+        <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll to explore</span></div>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="filter-section">
+        <div class="filter-inner">
+            <span class="filter-label">Filter</span>
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="disaster">Disaster Relief</button>
+            <button class="filter-btn" data-filter="food">Food Sovereignty</button>
+            <button class="filter-btn" data-filter="land">Land Access</button>
+            <button class="filter-btn" data-filter="environment">Environment</button>
+            <button class="filter-btn" data-filter="community">Community</button>
+        </div>
     </div>
 
-    <!-- 2. Barrio Eléctrico -->
-    <div class="charity-card" data-category="disaster">
-      <div class="card-top">
-        <div class="card-icon disaster">⚡</div>
-        <span class="card-tag tag-disaster">Disaster Relief</span>
-      </div>
-      <div class="card-name">Barrio Eléctrico</div>
-      <p class="card-desc">Working across multiple municipios to bring community-controlled, renewable electricity access to Puerto Rican neighborhoods — reducing dependence on an aging and disaster-vulnerable grid.</p>
-      <div class="card-links">
-        <div class="card-links-row">
-          <span class="card-location">📍 Aguadilla &amp; other municipios</span>
-          <a href="https://www.barrioelectrico.org/" target="_blank" class="card-link">Visit site</a>
+    <!-- GRID -->
+    <section class="charities-section">
+        <div class="section-header">
+            <h2 class="section-title">Organizations</h2>
+            <span class="section-count" id="count">Showing 12</span>
         </div>
-        <div class="paypal-block">
-          <a class="paypal-btn" href="https://www.paypal.com/donate/?hosted_button_id=GGL82TBF3LGF2" target="_blank">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
-            Donate via PayPal
-          </a>
-          <span class="paypal-url">paypal.com/donate/?hosted_button_id=GGL82TBF3LGF2</span>
-        </div>
-      </div>
-    </div>
+        <div class="charity-grid" id="grid">
 
-    <!-- 3. La C.A.T -->
-    <div class="charity-card" data-category="land">
-      <div class="card-top">
-        <div class="card-icon land">🌱</div>
-        <span class="card-tag tag-land">Land Access</span>
-      </div>
-      <div class="card-name">La C.A.T — Cooperativa de Acceso a Tierras</div>
-      <p class="card-desc">A land cooperative working to reclaim and collectively steward agricultural land in Puerto Rico, building food sovereignty from the ground up through community land ownership models.</p>
-      <div class="card-links">
-        <div class="card-links-row">
-          <span class="card-location">📍 Guaynabo, PR</span>
-          <a href="https://lacat.org/" target="_blank" class="card-link">Visit site</a>
-        </div>
-        <div class="card-links-row" style="justify-content: flex-end;">
-          <a href="https://lacat.org/donaciones/" target="_blank" class="card-link">Donate</a>
-        </div>
-      </div>
-    </div>
+            <!-- PayPal SVG path reused inline in every paypal-btn -->
+            <!-- 1. Casa Pueblo -->
+            <div class="charity-card" data-category="disaster">
+                <div class="card-top">
+                    <div class="card-icon disaster">🏠</div>
+                    <span class="card-tag tag-disaster">Disaster Relief</span>
+                </div>
+                <div class="card-name">Casa Pueblo</div>
+                <p class="card-desc">A community-based organization in Adjuntas that became a national model for solar-powered disaster resilience after Hurricane María — keeping lights, medicine, and communications alive when the grid failed.</p>
+                <div class="card-links">
+                    <div class="card-links-row">
+                        <span class="card-location">📍 Adjuntas, PR</span>
+                        <a href="https://casapueblo.org/" target="_blank" class="card-link">Visit site</a>
+                    </div>
+                    <div class="paypal-block">
+                        <a class="paypal-btn" href="https://www.paypal.com/donate?token=iqeeGDsPXFpJoIE28hueBX3pAgnKXIOv8UeSBjr26DIlQaqDUvZAfZXr8mjw7xFEGoZf_3hOtA9-dQPQ" target="_blank">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z" /></svg>
+                            Donate via PayPal
+                        </a>
+                        <span class="paypal-url">paypal.com/donate?token=BG6_k8Ouh…</span>
+                    </div>
+                </div>
+            </div>
 
-    <!-- 4. FiTiTiCas -->
-    <div class="charity-card" data-category="food">
-      <div class="card-top">
-        <div class="card-icon food">🌾</div>
-        <span class="card-tag tag-food">Food Sovereignty</span>
-      </div>
-      <div class="card-name">FiTiTiCas — Fideicomiso Agrícola</div>
-      <p class="card-desc">An agricultural land trust protecting Puerto Rican farmland from development and keeping it in the hands of local farmers — supporting long-term food security and resilient local food systems.</p>
-      <div class="card-links">
-        <div class="card-links-row">
-          <span class="card-location">📍 Puerto Rico</span>
-          <a href="https://www.fideicomisoagricola.org/donar" target="_blank" class="card-link">Donate</a>
-        </div>
-        <div class="paypal-block">
-          <a class="paypal-btn" href="https://www.paypal.com/us/fundraiser/charity/3884088" target="_blank">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
-            Donate via PayPal
-          </a>
-          <span class="paypal-url">paypal.com/us/fundraiser/charity/3884088</span>
-        </div>
-      </div>
-    </div>
+            <!-- 2. Barrio Eléctrico -->
+            <div class="charity-card" data-category="disaster">
+                <div class="card-top">
+                    <div class="card-icon disaster">⚡</div>
+                    <span class="card-tag tag-disaster">Disaster Relief</span>
+                </div>
+                <div class="card-name">Barrio Eléctrico</div>
+                <p class="card-desc">Working across multiple municipios to bring community-controlled, renewable electricity access to Puerto Rican neighborhoods — reducing dependence on an aging and disaster-vulnerable grid.</p>
+                <div class="card-links">
+                    <div class="card-links-row">
+                        <span class="card-location">📍 Aguadilla &amp; other municipios</span>
+                        <a href="https://www.barrioelectrico.org/" target="_blank" class="card-link">Visit site</a>
+                    </div>
+                    <div class="paypal-block">
+                        <a class="paypal-btn" href="https://www.paypal.com/donate/?hosted_button_id=GGL82TBF3LGF2" target="_blank">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z" /></svg>
+                            Donate via PayPal
+                        </a>
+                        <span class="paypal-url">paypal.com/donate/?hosted_button_id=GGL82TBF3LGF2</span>
+                    </div>
+                </div>
+            </div>
 
-    <!-- 5. Huerto Urbano del Callejón Trujillo -->
-    <div class="charity-card" data-category="food">
-      <div class="card-top">
-        <div class="card-icon food">🌿</div>
-        <span class="card-tag tag-food">Food Sovereignty</span>
-      </div>
-      <div class="card-name">Huerto Urbano del Callejón Trujillo</div>
-      <p class="card-desc">A community urban garden in Ponce growing food, fostering community bonds, and nurturing ecological awareness in the heart of the city. Follow their work on Instagram.</p>
-      <div class="card-links">
-        <div class="card-links-row">
-          <span class="card-location">📍 Ponce, PR</span>
-          <a href="https://www.instagram.com/huerto_callejon_trujillo/" target="_blank" class="card-link">Instagram</a>
-        </div>
-        <div class="paypal-block">
-          <a class="paypal-btn" href="https://www.paypal.com/donate?campaign_id=GMSFQMBDJEY8E" target="_blank">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
-            Donate via PayPal
-          </a>
-          <span class="paypal-url">paypal.com/donate?campaign_id=GMSFQMBDJEY8E</span>
-        </div>
-      </div>
-    </div>
+            <!-- 3. La C.A.T -->
+            <div class="charity-card" data-category="land">
+                <div class="card-top">
+                    <div class="card-icon land">🌱</div>
+                    <span class="card-tag tag-land">Land Access</span>
+                </div>
+                <div class="card-name">La C.A.T — Cooperativa de Acceso a Tierras</div>
+                <p class="card-desc">A land cooperative working to reclaim and collectively steward agricultural land in Puerto Rico, building food sovereignty from the ground up through community land ownership models.</p>
+                <div class="card-links">
+                    <div class="card-links-row">
+                        <span class="card-location">📍 Guaynabo, PR</span>
+                        <a href="https://lacat.org/" target="_blank" class="card-link">Visit site</a>
+                    </div>
+                    <div class="card-links-row" style="justify-content: flex-end;">
+                        <a href="https://lacat.org/donaciones/" target="_blank" class="card-link">Donate</a>
+                    </div>
+                </div>
+            </div>
 
-    <!-- 6. UrbePie -->
-    <div class="charity-card" data-category="land">
-      <div class="card-top">
-        <div class="card-icon land">🏘️</div>
-        <span class="card-tag tag-land">Land Access</span>
-      </div>
-      <div class="card-name">UrbePie</div>
-      <p class="card-desc">Reclaims vacant and abandoned urban land in Caguas for community use — transforming neglected lots into productive spaces that strengthen neighborhood resilience and self-sufficiency.</p>
-      <div class="card-links">
-        <div class="card-links-row">
-          <span class="card-location">📍 Caguas, PR</span>
-          <a href="https://www.urbeapie.com/" target="_blank" class="card-link">Visit site</a>
-        </div>
-        <div class="paypal-block">
-          <a class="paypal-btn" href="https://www.paypal.com/paypalme/Urbeapie" target="_blank">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
-            Donate via PayPal
-          </a>
-          <span class="paypal-url">paypal.com/paypalme/Urbeapie</span>
-        </div>
-      </div>
-    </div>
+            <!-- 4. FiTiTiCas -->
+            <div class="charity-card" data-category="food">
+                <div class="card-top">
+                    <div class="card-icon food">🌾</div>
+                    <span class="card-tag tag-food">Food Sovereignty</span>
+                </div>
+                <div class="card-name">FiTiTiCas — Fideicomiso Agrícola</div>
+                <p class="card-desc">An agricultural land trust protecting Puerto Rican farmland from development and keeping it in the hands of local farmers — supporting long-term food security and resilient local food systems.</p>
+                <div class="card-links">
+                    <div class="card-links-row">
+                        <span class="card-location">📍 Puerto Rico</span>
+                        <a href="https://www.fideicomisoagricola.org/donar" target="_blank" class="card-link">Donate</a>
+                    </div>
+                    <div class="paypal-block">
+                        <a class="paypal-btn" href="https://www.paypal.com/us/fundraiser/charity/3884088" target="_blank">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z" /></svg>
+                            Donate via PayPal
+                        </a>
+                        <span class="paypal-url">paypal.com/us/fundraiser/charity/3884088</span>
+                    </div>
+                </div>
+            </div>
 
-    <!-- 7. El Josco Bravo -->
-    <div class="charity-card" data-category="food">
-      <div class="card-top">
-        <div class="card-icon food">🐄</div>
-        <span class="card-tag tag-food">Food Sovereignty</span>
-      </div>
-      <div class="card-name">El Josco Bravo</div>
-      <p class="card-desc">An agroecological farm in Toa Alta producing local food and offering community-supported agriculture subscriptions — a living model for sustainable, community-rooted farming in Puerto Rico.</p>
-      <div class="card-links">
-        <div class="card-links-row">
-          <span class="card-location">📍 Toa Alta, PR</span>
-          <a href="https://www.eljoscobravo.org/" target="_blank" class="card-link">Visit site</a>
+            <!-- 5. Huerto Urbano del Callejón Trujillo -->
+            <div class="charity-card" data-category="food">
+                <div class="card-top">
+                    <div class="card-icon food">🌿</div>
+                    <span class="card-tag tag-food">Food Sovereignty</span>
+                </div>
+                <div class="card-name">Huerto Urbano del Callejón Trujillo</div>
+                <p class="card-desc">A community urban garden in Ponce growing food, fostering community bonds, and nurturing ecological awareness in the heart of the city. Follow their work on Instagram.</p>
+                <div class="card-links">
+                    <div class="card-links-row">
+                        <span class="card-location">📍 Ponce, PR</span>
+                        <a href="https://www.instagram.com/huerto_callejon_trujillo/" target="_blank" class="card-link">Instagram</a>
+                    </div>
+                    <div class="paypal-block">
+                        <a class="paypal-btn" href="https://www.paypal.com/donate?campaign_id=GMSFQMBDJEY8E" target="_blank">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z" /></svg>
+                            Donate via PayPal
+                        </a>
+                        <span class="paypal-url">paypal.com/donate?campaign_id=GMSFQMBDJEY8E</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. UrbePie -->
+            <div class="charity-card" data-category="land">
+                <div class="card-top">
+                    <div class="card-icon land">🏘️</div>
+                    <span class="card-tag tag-land">Land Access</span>
+                </div>
+                <div class="card-name">UrbePie</div>
+                <p class="card-desc">Reclaims vacant and abandoned urban land in Caguas for community use — transforming neglected lots into productive spaces that strengthen neighborhood resilience and self-sufficiency.</p>
+                <div class="card-links">
+                    <div class="card-links-row">
+                        <span class="card-location">📍 Caguas, PR</span>
+                        <a href="https://www.urbeapie.com/" target="_blank" class="card-link">Visit site</a>
+                    </div>
+                    <div class="paypal-block">
+                        <a class="paypal-btn" href="https://www.paypal.com/paypalme/Urbeapie" target="_blank">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z" /></svg>
+                            Donate via PayPal
+                        </a>
+                        <span class="paypal-url">paypal.com/paypalme/Urbeapie</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. El Josco Bravo -->
+            <div class="charity-card" data-category="food">
+                <div class="card-top">
+                    <div class="card-icon food">🐄</div>
+                    <span class="card-tag tag-food">Food Sovereignty</span>
+                </div>
+                <div class="card-name">El Josco Bravo</div>
+                <p class="card-desc">An agroecological farm in Toa Alta producing local food and offering community-supported agriculture subscriptions — a living model for sustainable, community-rooted farming in Puerto Rico.</p>
+                <div class="card-links">
+                    <div class="card-links-row">
+                        <span class="card-location">📍 Toa Alta, PR</span>
+                        <a href="https://www.eljoscobravo.org/" target="_blank" class="card-link">Visit site</a>
+                    </div>
+                    <div class="card-links-row" style="justify-content: flex-end;">
+                        <a href="https://www.eljoscobravo.org/checkout/donate?donatePageId=64d16fc519367e5bcd535cbc" target="_blank" class="card-link">Contribute</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Plenitud PR -->
+            <div class="charity-card" data-category="food">
+                <div class="card-top">
+                    <div class="card-icon food">☀️</div>
+                    <span class="card-tag tag-food">Food Sovereignty</span>
+                </div>
+                <div class="card-name">Plenitud PR</div>
+                <p class="card-desc">An eco-educational initiative in Las Marías integrating sustainable agriculture, renewable energy, and holistic community living — a model for what a resilient Puerto Rican future can look like.</p>
+                <div class="card-links">
+                    <div class="card-links-row">
+                        <span class="card-location">📍 Las Marías, PR</span>
+                        <a href="https://es.plenitudpr.org/" target="_blank" class="card-link">Visit site</a>
+                    </div>
+                    <div class="card-links-row" style="justify-content: flex-end;">
+                        <a href="https://plenitudiniciativasecoeducativasinc-bloom.kindful.com/?campaign=1340887" target="_blank" class="card-link">Contribute</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. Para la Naturaleza -->
+            <div class="charity-card" data-category="environment">
+                <div class="card-top">
+                    <div class="card-icon environment">🌳</div>
+                    <span class="card-tag tag-environment">Environment</span>
+                </div>
+                <div class="card-name">Para la Naturaleza</div>
+                <p class="card-desc">Conserves natural lands, restores ecosystems, and reconnects communities with Puerto Rico's natural heritage through science, education, and long-term land stewardship programs.</p>
+                <div class="card-links">
+                    <div class="card-links-row">
+                        <span class="card-location">📍 San Juan, PR</span>
+                        <a href="https://paralanaturaleza.org" target="_blank" class="card-link">Visit site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Taller Salud -->
+            <div class="charity-card" data-category="community">
+                <div class="card-top">
+                    <div class="card-icon community">🤝</div>
+                    <span class="card-tag tag-community">Community</span>
+                </div>
+                <div class="card-name">Taller Salud</div>
+                <p class="card-desc">A feminist community health organization in Loíza working at the intersection of public health, gender equity, and racial justice — centering the most marginalized voices on the island.</p>
+                <div class="card-links">
+                    <div class="card-links-row">
+                        <span class="card-location">📍 Loíza, PR</span>
+                        <a href="https://tallersalud.com" target="_blank" class="card-link">Visit site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Ayuda Legal Puerto Rico -->
+            <div class="charity-card" data-category="disaster">
+                <div class="card-top">
+                    <div class="card-icon disaster">⚖️</div>
+                    <span class="card-tag tag-disaster">Disaster Relief</span>
+                </div>
+                <div class="card-name">Ayuda Legal Puerto Rico</div>
+                <p class="card-desc">Provides free legal services to low-income communities after disasters — helping residents navigate federal aid, insurance claims, and housing rights when they need it most.</p>
+                <div class="card-links">
+                    <div class="card-links-row">
+                        <span class="card-location">📍 San Juan, PR</span>
+                        <a href="https://ayudalegalpr.org" target="_blank" class="card-link">Visit site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 12. Sociedad Ambiente Marino -->
+            <div class="charity-card" data-category="environment">
+                <div class="card-top">
+                    <div class="card-icon environment">🐠</div>
+                    <span class="card-tag tag-environment">Environment</span>
+                </div>
+                <div class="card-name">Sociedad Ambiente Marino</div>
+                <p class="card-desc">Protects Puerto Rico's coastal and marine ecosystems through scientific research, reef restoration, and community engagement — guarding the waters that surround and sustain the island.</p>
+                <div class="card-links">
+                    <div class="card-links-row">
+                        <span class="card-location">📍 San Juan, PR</span>
+                        <a href="https://sampr.org" target="_blank" class="card-link">Visit site</a>
+                    </div>
+                </div>
+            </div>
+
         </div>
-        <div class="card-links-row" style="justify-content: flex-end;">
-          <a href="https://www.eljoscobravo.org/checkout/donate?donatePageId=64d16fc519367e5bcd535cbc" target="_blank" class="card-link">Contribute</a>
-        </div>
-      </div>
-    </div>
+    </section>
 
-    <!-- 8. Plenitud PR -->
-    <div class="charity-card" data-category="food">
-      <div class="card-top">
-        <div class="card-icon food">☀️</div>
-        <span class="card-tag tag-food">Food Sovereignty</span>
-      </div>
-      <div class="card-name">Plenitud PR</div>
-      <p class="card-desc">An eco-educational initiative in Las Marías integrating sustainable agriculture, renewable energy, and holistic community living — a model for what a resilient Puerto Rican future can look like.</p>
-      <div class="card-links">
-        <div class="card-links-row">
-          <span class="card-location">📍 Las Marías, PR</span>
-          <a href="https://es.plenitudpr.org/" target="_blank" class="card-link">Visit site</a>
-        </div>
-        <div class="card-links-row" style="justify-content: flex-end;">
-          <a href="https://plenitudiniciativasecoeducativasinc-bloom.kindful.com/?campaign=1340887" target="_blank" class="card-link">Contribute</a>
-        </div>
-      </div>
-    </div>
+    <section class="submit-section">
+        <h2>Suggest a Charity</h2>
+        <p>Know an organization we should add? Submit it here for review.</p>
+        <form id="submit-form">
+            <input type="text" id="s-name" placeholder="Organization name" required>
+            <input type="text" id="s-location" placeholder="Location (city, PR)" required>
+            <input type="url" id="s-website" placeholder="Website URL">
+            <input type="url" id="s-paypal" placeholder="PayPal link (if any)">
+            <select id="s-category">
+                <option value="">Select a category</option>
+                <option value="disaster">Disaster Relief</option>
+                <option value="food">Food Sovereignty</option>
+                <option value="land">Land Access</option>
+                <option value="environment">Environment</option>
+                <option value="community">Community</option>
+            </select>
+            <button type="submit">Submit</button>
+            <p id="submit-msg"></p>
+        </form>
+    </section>
 
-    <!-- 9. Para la Naturaleza -->
-    <div class="charity-card" data-category="environment">
-      <div class="card-top">
-        <div class="card-icon environment">🌳</div>
-        <span class="card-tag tag-environment">Environment</span>
-      </div>
-      <div class="card-name">Para la Naturaleza</div>
-      <p class="card-desc">Conserves natural lands, restores ecosystems, and reconnects communities with Puerto Rico's natural heritage through science, education, and long-term land stewardship programs.</p>
-      <div class="card-links">
-        <div class="card-links-row">
-          <span class="card-location">📍 San Juan, PR</span>
-          <a href="https://paralanaturaleza.org" target="_blank" class="card-link">Visit site</a>
-        </div>
-      </div>
-    </div>
+    <script>
+        document.getElementById('submit-form').addEventListener('submit', async e => {
+            e.preventDefault();
+            const msg = document.getElementById('submit-msg');
+            msg.textContent = 'Sending...';
+            try {
+                const res = await fetch('https://g7j7dhukqh.execute-api.us-east-1.amazonaws.com/submit', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: document.getElementById('s-name').value,
+                        location: document.getElementById('s-location').value,
+                        website: document.getElementById('s-website').value,
+                        paypal: document.getElementById('s-paypal').value,
+                        category: document.getElementById('s-category').value,
+                    })
+                });
+                msg.textContent = res.ok ? '✅ Thank you! We\'ll review your submission.' : '❌ Something went wrong. Try again.';
+            } catch {
+                msg.textContent = '❌ Could not connect. Try again later.';
+            }
+        });
+    </script>
 
-    <!-- 10. Taller Salud -->
-    <div class="charity-card" data-category="community">
-      <div class="card-top">
-        <div class="card-icon community">🤝</div>
-        <span class="card-tag tag-community">Community</span>
-      </div>
-      <div class="card-name">Taller Salud</div>
-      <p class="card-desc">A feminist community health organization in Loíza working at the intersection of public health, gender equity, and racial justice — centering the most marginalized voices on the island.</p>
-      <div class="card-links">
-        <div class="card-links-row">
-          <span class="card-location">📍 Loíza, PR</span>
-          <a href="https://tallersalud.com" target="_blank" class="card-link">Visit site</a>
-        </div>
-      </div>
-    </div>
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-brand">Apoyo PR</div>
+        <p class="footer-note">A community resource, not affiliated with any listed organization. Always verify nonprofits before donating. PayPal links are provided directly by each organization.</p>
+    </footer>
 
-    <!-- 11. Ayuda Legal Puerto Rico -->
-    <div class="charity-card" data-category="disaster">
-      <div class="card-top">
-        <div class="card-icon disaster">⚖️</div>
-        <span class="card-tag tag-disaster">Disaster Relief</span>
-      </div>
-      <div class="card-name">Ayuda Legal Puerto Rico</div>
-      <p class="card-desc">Provides free legal services to low-income communities after disasters — helping residents navigate federal aid, insurance claims, and housing rights when they need it most.</p>
-      <div class="card-links">
-        <div class="card-links-row">
-          <span class="card-location">📍 San Juan, PR</span>
-          <a href="https://ayudalegalpr.org" target="_blank" class="card-link">Visit site</a>
-        </div>
-      </div>
-    </div>
+    <script>
+        const btns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.charity-card');
+        const countEl = document.getElementById('count');
 
-    <!-- 12. Sociedad Ambiente Marino -->
-    <div class="charity-card" data-category="environment">
-      <div class="card-top">
-        <div class="card-icon environment">🐠</div>
-        <span class="card-tag tag-environment">Environment</span>
-      </div>
-      <div class="card-name">Sociedad Ambiente Marino</div>
-      <p class="card-desc">Protects Puerto Rico's coastal and marine ecosystems through scientific research, reef restoration, and community engagement — guarding the waters that surround and sustain the island.</p>
-      <div class="card-links">
-        <div class="card-links-row">
-          <span class="card-location">📍 San Juan, PR</span>
-          <a href="https://sampr.org" target="_blank" class="card-link">Visit site</a>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-brand">Apoyo Boricua</div>
-  <p class="footer-note">A community resource, not affiliated with any listed organization. Always verify nonprofits before donating. PayPal links are provided directly by each organization.</p>
-</footer>
-
-<script>
-  const btns   = document.querySelectorAll('.filter-btn');
-  const cards  = document.querySelectorAll('.charity-card');
-  const countEl = document.getElementById('count');
-
-  btns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      btns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const f = btn.dataset.filter;
-      let visible = 0;
-      cards.forEach(card => {
-        const show = f === 'all' || card.dataset.category === f;
-        card.classList.toggle('hidden', !show);
-        if (show) visible++;
-      });
-      countEl.textContent = `Showing ${visible}`;
-    });
-  });
-</script>
+        btns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const f = btn.dataset.filter;
+                let visible = 0;
+                cards.forEach(card => {
+                    const show = f === 'all' || card.dataset.category === f;
+                    card.classList.toggle('hidden', !show);
+                    if (show) visible++;
+                });
+                countEl.textContent = `Showing ${visible}`;
+            });
+        });
+    </script>
 </body>
 </html>
